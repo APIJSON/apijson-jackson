@@ -101,7 +101,7 @@ public class APIJSONParser<T> extends apijson.framework.javax.APIJSONParser<T, M
 			, boolean isSubquery, boolean isTable, boolean isArrayMainTable) throws Exception {
 		return (APIJSONObjectParser<T>) super.createObjectParser(
 				request, parentPath, arrayConfig, isSubquery, isTable, isArrayMainTable
-		);
+		).setMethod(getMethod()).setParser(this);
 	}
 
 	public static Map<String, Object> parseRequest(String request) {

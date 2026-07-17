@@ -15,7 +15,6 @@ limitations under the License.*/
 package apijson.jackson;
 
 import apijson.RequestMethod;
-import apijson.jackson.javax.APIJSONApplication;
 import apijson.orm.AbstractSQLConfig;
 import apijson.orm.Join;
 import apijson.orm.SQLConfig;
