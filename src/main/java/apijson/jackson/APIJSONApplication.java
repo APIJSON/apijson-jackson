@@ -21,9 +21,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.core.type.TypeReference;
+import tools.jackson.databind.ObjectMapper;
 
 
 /**启动入口 Application
@@ -78,7 +78,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
                         return MAPPER.writeValueAsString(obj);
                     }
                     return MAPPER.writeValueAsString(obj);
-                } catch (JsonProcessingException e) {
+                } catch (JacksonException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -87,7 +87,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
             public Object parse(Object json) {
                 try {
                     return MAPPER.readValue(toJSONString(json), Object.class);
-                } catch (JsonProcessingException e) {
+                } catch (JacksonException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -96,7 +96,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
             public Map<String, Object> parseObject(Object json) {
                 try {
                     return MAPPER.readValue(toJSONString(json), JSON_OBJECT_REFERENCE);
-                } catch (JsonProcessingException e) {
+                } catch (JacksonException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -105,7 +105,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
             public <T> T parseObject(Object json, Class<T> clazz) {
                 try {
                     return MAPPER.readValue(toJSONString(json), clazz);
-                } catch (JsonProcessingException e) {
+                } catch (JacksonException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -114,7 +114,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
             public List<Object> parseArray(Object json) {
                 try {
                     return MAPPER.readValue(toJSONString(json), JSON_ARRAY_REFERENCE);
-                } catch (JsonProcessingException e) {
+                } catch (JacksonException e) {
                     throw new RuntimeException(e);
                 }
             }
@@ -133,7 +133,7 @@ public class APIJSONApplication extends apijson.framework.APIJSONApplication {
                         String str = toJSONString(obj);
                         try {
                             obj = clazz.isAssignableFrom(String.class) ? str : MAPPER.readValue(str, clazz);
-                        } catch (JsonProcessingException e) {
+                        } catch (JacksonException e) {
                             throw new RuntimeException(e);
                         }
                     }
