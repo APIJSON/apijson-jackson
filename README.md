@@ -1,5 +1,5 @@
 # apijson-jackson  [![](https://jitpack.io/v/APIJSON/apijson-jackson.svg)](https://jitpack.io/#APIJSON/apijson-jackson)
-[APIJSON](https://github.com/Tencent/APIJSON) 8.3.2+ 的 jackson 插件，简化使用。<br />
+[APIJSON](https://github.com/APIJSON/APIJSON) 8.3.2+ 的 jackson 插件，简化使用。<br />
 A jackson plugin for [APIJSON](https://github.com/APIJSON/APIJSON) 8.3.2+.<br />
 
 
@@ -138,8 +138,8 @@ See document in [APIJSONController](/main/src/main/java/apijson/jackson/APIJSONC
 <br />
 
 <br />
-有问题可以去 Tencent/APIJSON 提 issue <br />
-https://github.com/Tencent/APIJSON/issues/36
+有问题可以去 APIJSON/APIJSON 提 issue <br />
+https://github.com/APIJSON/APIJSON/issues/36
 
 <br /><br />
 
